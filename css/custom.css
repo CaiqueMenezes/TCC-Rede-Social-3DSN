@@ -1,0 +1,14 @@
+
+.btn-login {
+	display: inline-block;
+	padding: 1rem 1.5rem 1rem 1.5rem;
+	border: 1px solid #FE9800;
+	border-radius: 30px;
+	background-color: #FE9800;
+	color: #ffffff;
+	font-weight: 600;
+	font-size: 0.875rem;
+	line-height: 0;
+	text-decoration: none;
+	transition: all 0.2s;
+}
