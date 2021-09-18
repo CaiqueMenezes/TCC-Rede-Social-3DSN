@@ -463,10 +463,8 @@ a:hover {
 /*     Header     */
 /******************/
 .header {
-	padding-top: 8rem;
+	padding-top: 200px;
 	padding-bottom: 4em;
-	background: url('../images/header-background.jpg') center center no-repeat;
-	background-size: cover;
 	text-align: center;
 }
 
@@ -1275,7 +1273,7 @@ a:hover {
 	/* Header */
 	.header {
 		overflow: hidden;
-		padding-top: 20.25rem;
+		padding-top: 200px;
 		padding-bottom: 15rem;
 	}
 
@@ -1289,8 +1287,8 @@ a:hover {
 	
 	.header .image-container img {
 		position: absolute;
-		bottom: -520px;
-		left: 60px;
+		bottom: -425px;
+		left: 100px;
 		max-width: none;
 	}
 	/* end of header */
