@@ -1,3 +1,5 @@
+auth = firebase.auth()
+
 function login() {
     if (firebase.auth().currentUser) {
         firebase.auth().signOut()
@@ -8,13 +10,29 @@ function login() {
             .auth()
             .signInWithEmailAndPassword(email,password)
             .then( () => {
-                alert('Usuário logado com sucesso, Bem vindo!')
                 window.location.href = "index.html"
             })
             .catch((error) => {
                 alert(error)
             })
+            
+                
 }
+
+function authState() {
+    auth.onAuthStateChanged(user => {
+        if (user) {
+
+            alert('Usuário logado com sucesso, Bem vindo!')
+            var uid = user.uid;
+            window.alert(uid)
+
+          } else {
+            alert('Usuário deslogado, até a próxima!')
+          }
+})
+}
+
 
 function register() {
     const email = document.getElementById('email').value
@@ -31,4 +49,19 @@ function register() {
     })
 }
 
+
+function logOut() {
+    auth.signOut()
+    .then(() => {
+        alert('Usuário deslogado com sucesso');
+        window.location.href = "index.html"
+    })
+    .catch((error) => {
+        alert(error)
+    })
+}
     
+function funcoes() {
+    login()
+    authState()
+}
