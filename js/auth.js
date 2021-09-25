@@ -39,15 +39,15 @@ function authVerify() {
 
     var user = firebase.auth().currentUser;
     var validation = false;
+
     while (validation == false) {
     if (user == '' || user == null) {
         window.location.href = "https://swongs.netlify.app/register"
+        return validation == true
 
     } else {
         window.location.href = "https://swongs.netlify.app/"
-    } if (window.location = "https://swongs.netlify.app/register") {
-        validation == true;
-    }
+    } 
 
 }
 
