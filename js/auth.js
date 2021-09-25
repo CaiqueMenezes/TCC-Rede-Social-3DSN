@@ -29,29 +29,25 @@ function authState() {
           } else {
             
           }
+          var user = firebase.auth().currentUser;
+		   
+          if (user == '' || user == null) {
+              window.location.href = "https://swongs.netlify.app/register"
+              
+      
+          } else {
+              window.location.href = "https://swongs.netlify.app/"
+          } 
+      
 })
 }
-var body = document.getElementById("body");
-body = window.onload = authVerify();
 
 
 function authVerify() {
 
-    var user = firebase.auth().currentUser;
-    var continuar = true;
+    
+ } 
 
-    do {
-		   
-    if (user == '' || user == null) {
-        window.location.href = "https://swongs.netlify.app/register"
-        continuar = false
-
-    } else {
-        window.location.href = "https://swongs.netlify.app/"
-    } 
-
- } while (continuar == true)
-}
 
     
 
