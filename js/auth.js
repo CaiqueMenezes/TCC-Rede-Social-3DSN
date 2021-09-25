@@ -33,14 +33,13 @@ function authState() {
 }
 window.onload = authVerify();
 
-function authVerify() {
+function authVerify(e) {
 
     var user = firebase.auth().currentUser;
 
     if (user == '' || user == null) {
-        console.log(user)
         window.location.href = "https://swongs.netlify.app/register"
-        
+        e.preventDefault()
     } else {
         window.location.href = "https://swongs.netlify.app/"
     }
