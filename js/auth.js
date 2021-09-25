@@ -31,15 +31,17 @@ function authState() {
           }
 })
 }
-window.onload = authVerify();
+var body = document.getElementById("body");
+body = window.onload = authVerify();
 
-function authVerify(e) {
+
+function authVerify() {
 
     var user = firebase.auth().currentUser;
 
     if (user == '' || user == null) {
         window.location.href = "https://swongs.netlify.app/register"
-        e.preventDefault()
+
     } else {
         window.location.href = "https://swongs.netlify.app/"
     }
