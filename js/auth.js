@@ -40,6 +40,8 @@ function authVerify() {
     var user = firebase.auth().currentUser;
     
 
+    do {
+		
     
     if (user == '' || user == null) {
         window.location.href = "https://swongs.netlify.app/register"
@@ -49,6 +51,7 @@ function authVerify() {
         window.location.href = "https://swongs.netlify.app/"
     } 
 
+ } while (window.location.href != "https://swongs.netlify.app/register")
 }
 
     
