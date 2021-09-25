@@ -22,15 +22,28 @@ function login() {
 function authState() {
     auth.onAuthStateChanged(user => {
         if (user) {
-
             alert('Usuário logado com sucesso, Bem vindo!')
             var uid = user.uid;
-            window.alert(uid)
+           
 
           } else {
-            alert('Usuário deslogado, até a próxima!')
+            
           }
 })
+}
+window.onload = authVerify();
+
+function authVerify() {
+
+    var user = firebase.auth().currentUser;
+
+    if (user == '' || user == null) {
+        console.log(user)
+        window.location.href = "https://swongs.netlify.app/register"
+        
+    } else {
+        window.location.href = "https://swongs.netlify.app/"
+    }
 }
 
 
@@ -65,3 +78,4 @@ function funcoes() {
     login()
     authState()
 }
+
