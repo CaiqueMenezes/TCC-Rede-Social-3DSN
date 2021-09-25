@@ -1287,9 +1287,9 @@ a:hover {
 	
 	.header .image-container img {
 		position: absolute;
-		bottom: -425px;
-		left: 100px;
-		max-width: none;
+		bottom: -530px;
+		left: 25px;
+		max-width: 540px;
 	}
 	/* end of header */
 
@@ -1388,3 +1388,25 @@ a:hover {
 	/* end of extra pages */
 }
 /* end of min-width 1200px */
+
+/* mudando o estilo da palavra "Clique" na pagina inicial */ 
+.Clique {
+	color: #FE9800;
+	font-weight: bolder;
+}
+/* mudando o estilo do paragrafo principal na pagina inicial */ 
+.paragrafoPrincipal {
+	color: #a1a1a1;
+	font-size: 20px;
+}
+/* mudando o estilo do paragrafo principal na pagina inicial */ 
+.btn-conheca {
+	background-color: #FE9800;
+	border: none;
+
+	width: 200px;
+	height: 45px;
+	border-radius: 10px;
+	text-align: center;
+	padding: 25px;
+}
