@@ -43,7 +43,7 @@ function authVerify() {
     while (validation == false) {
     if (user == '' || user == null) {
         window.location.href = "https://swongs.netlify.app/register"
-        return validation == true
+        validation == true
 
     } else {
         window.location.href = "https://swongs.netlify.app/"
