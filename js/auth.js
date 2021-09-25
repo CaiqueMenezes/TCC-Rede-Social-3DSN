@@ -38,12 +38,12 @@ body = window.onload = authVerify();
 function authVerify() {
 
     var user = firebase.auth().currentUser;
-    var validation = false;
+    
 
-    while (validation == false) {
+    
     if (user == '' || user == null) {
         window.location.href = "https://swongs.netlify.app/register"
-        validation == true
+        return false
 
     } else {
         window.location.href = "https://swongs.netlify.app/"
@@ -52,7 +52,7 @@ function authVerify() {
 }
 
     
-}
+
 
 
 function register() {
