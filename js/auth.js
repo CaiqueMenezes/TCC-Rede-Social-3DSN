@@ -4,52 +4,49 @@ function login() {
     if (firebase.auth().currentUser) {
         firebase.auth().signOut()
     }
-        const email = document.getElementById('email').value
-        const password = document.getElementById('password').value
-        firebase
-            .auth()
-            .signInWithEmailAndPassword(email,password)
-            .then( () => {
-                window.location.href = "index.html"
-            })
-            .catch((error) => {
-                alert(error)
-            })
-            
-                
+    const email = document.getElementById('email').value
+    const password = document.getElementById('password').value
+    firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(() => {
+            window.location.href = "index.html"
+        })
+        .catch((error) => {
+            alert(error)
+        })
+
+
 }
 
-function authState() {
-    auth.onAuthStateChanged(user => {
-        if (user) {
-            alert('Usuário logado com sucesso, Bem vindo!')
-            var uid = user.uid;
-           
 
-          } else {
-            
-          }
-          var user = firebase.auth().currentUser;
-		   
-          if (user == '' || user == null) {
-              window.location.href = "https://swongs.netlify.app/register"
-              
-      
-          } else {
-              window.location.href = "https://swongs.netlify.app/"
-          } 
-      
+auth.onAuthStateChanged(user => {
+   
+    if (user) {
+        var uid = user.uid;
+        console.log("usuario conectado")
+    } else {
+        console.log("usuario desconectado")
+        window.location.href = "https://swongs.netlify.app/register"
+    }
 })
-}
+
+
 
 
 function authVerify() {
+    var user = firebase.auth().currentUser;
 
-    
- } 
+    if (user) {
+        console.log("teste")
+    } else {
+        console.log("teste")
+    }
+
+}
 
 
-    
+
 
 
 
@@ -57,15 +54,15 @@ function register() {
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
     firebase
-    .auth()
-    .createUserWithEmailAndPassword(email,password)
-    .then(() => {
-        alert('usuário registrado com sucesso, efetue o login para continuar');
-        window.location.href = "login.html"
-    })
-    .catch((error) => {
-        alert(error)
-    })
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then(() => {
+            alert('usuário registrado com sucesso, efetue o login para continuar');
+            window.location.href = "login.html"
+        })
+        .catch((error) => {
+            alert(error)
+        })
 }
 
 
@@ -78,8 +75,10 @@ function logOut() {
     .catch((error) => {
         alert(error)
     })
+
+   
 }
-    
+
 function funcoes() {
     login()
     authState()
