@@ -19,31 +19,24 @@ function login() {
 
 }
 
-
-auth.onAuthStateChanged(user => {
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+      var uid = user.uid;
+      console.log("usuario conectado")
+      
+  } else {
+    if (window.location.pathname === '/login.html') return // user is in login page, skip.
+    if (window.location.pathname === '/register.html') return 
+    if (window.location.pathname === 'index.html') {
+      window.location = 'register.html'
+    }
+   }
+  })
+    
    
-    if (user) {
-        var uid = user.uid;
-        console.log("usuario conectado")
-    } else {
-        console.log("usuario desconectado")
-        window.location.href = "https://swongs.netlify.app/register"
-    }
-})
 
 
 
-
-function authVerify() {
-    var user = firebase.auth().currentUser;
-
-    if (user) {
-        console.log("teste")
-    } else {
-        console.log("teste")
-    }
-
-}
 
 
 
@@ -70,7 +63,7 @@ function logOut() {
     auth.signOut()
     .then(() => {
         alert('Usuário deslogado com sucesso');
-        window.location.href = "index.html"
+        window.location.href = "register.html"
     })
     .catch((error) => {
         alert(error)
