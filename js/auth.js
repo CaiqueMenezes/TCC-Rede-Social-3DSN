@@ -19,7 +19,18 @@ function login() {
 
 }
 
-
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+      var uid = user.uid;
+      console.log("usuario conectado")
+      
+  } else {
+    if (window.location.pathname === '/login.html') return // user is in login page, skip.
+    if (window.location.pathname !== '/register.html') {
+      window.location = 'register.html'
+    }
+   }
+  })
     
    
 
@@ -39,7 +50,7 @@ function register() {
         .createUserWithEmailAndPassword(email, password)
         .then(() => {
             alert('usuário registrado com sucesso, efetue o login para continuar');
-            window.location.href = "https://swongs.netlify.app/login.html"
+            window.location.href = "login.html"
         })
         .catch((error) => {
             alert(error)
@@ -51,7 +62,7 @@ function logOut() {
     auth.signOut()
     .then(() => {
         alert('Usuário deslogado com sucesso');
-        window.location.href = "https://swongs.netlify.app/register.html"
+        window.location.href = "register.html"
     })
     .catch((error) => {
         alert(error)
