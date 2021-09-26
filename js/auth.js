@@ -22,12 +22,12 @@ function login() {
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
       var uid = user.uid;
-      console.log("usuario conectado")
+      alert("usuario conectado, bem vindo!")
       
   } else {
-    if (window.location.pathname === '/login.html') return // user is in login page, skip.
-    if (window.location.pathname !== '/register.html') {
-      window.location = 'register.html'
+    if (window.location.pathname === '/register.html') return // user is in login page, skip.
+    if (window.location.pathname !== '/login.html') {
+      window.location = 'login.html'
     }
    }
   })
