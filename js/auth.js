@@ -11,6 +11,7 @@ function login() {
         .signInWithEmailAndPassword(email, password)
         .then(() => {
             window.location.href = "index.html"
+            alert("Usuário Conectado, Bem Vindo!")
         })
         .catch((error) => {
             alert(error)
@@ -22,7 +23,7 @@ function login() {
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
       var uid = user.uid;
-      alert("usuario conectado, bem vindo!")
+      
       
   } else {
     if (window.location.pathname === '/register.html') return // user is in login page, skip.
@@ -32,14 +33,6 @@ firebase.auth().onAuthStateChanged(user => {
    }
   })
     
-   
-
-
-
-
-
-
-
 
 
 function register() {
@@ -62,7 +55,7 @@ function logOut() {
     auth.signOut()
     .then(() => {
         alert('Usuário deslogado com sucesso');
-        window.location.href = "register.html"
+        window.location.href = "login.html"
     })
     .catch((error) => {
         alert(error)
