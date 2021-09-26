@@ -5,6 +5,6 @@ firebase.auth().onAuthStateChanged(user => {
         console.log("usuario conectado")
         
     } else {
-       window.location.href = 'register.html'
+       window.location.href = 'https://swongs.netlify.app/register.html'
     }
 })

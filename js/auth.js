@@ -39,7 +39,7 @@ function register() {
         .createUserWithEmailAndPassword(email, password)
         .then(() => {
             alert('usuário registrado com sucesso, efetue o login para continuar');
-            window.location.href = "login.html"
+            window.location.href = "https://swongs.netlify.app/login.html"
         })
         .catch((error) => {
             alert(error)
@@ -51,7 +51,7 @@ function logOut() {
     auth.signOut()
     .then(() => {
         alert('Usuário deslogado com sucesso');
-        window.location.href = "register.html"
+        window.location.href = "https://swongs.netlify.app/register.html"
     })
     .catch((error) => {
         alert(error)
