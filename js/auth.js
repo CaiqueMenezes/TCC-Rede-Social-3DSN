@@ -24,6 +24,8 @@ function login() {
 
 const googleLogin = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
+    provider.addScope('https://swongs.netlify.app/register.html');
+
     firebase.auth()
         .signInWithPopup(provider)
         .then((result) => {
