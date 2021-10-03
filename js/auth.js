@@ -24,7 +24,7 @@ function login() {
 
 const googleLogin = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
-    provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+    provider.addScope('https://www.googleapis.com/auth/cloud-platform');
     firebase.auth()
         .signInWithPopup(provider)
         .then((result) => {
