@@ -1,8 +1,5 @@
 auth = firebase.auth()
 
-window.onload = () => {
-    console.log(user)
-}
 
 function login() {
     if (firebase.auth().currentUser) {
@@ -52,7 +49,7 @@ const googleLogin = () => {
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         var uid = user.uid;
-
+        console.log(user)
     } else {
         if (window.location.pathname === '/register.html') return // user is in login page, skip.
         if (window.location.pathname == '/login.html') return
