@@ -22,16 +22,17 @@ function login() {
 
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
-      var uid = user.uid;
-      
-      
-  } else {
-    if (window.location.pathname === '/register.html') return // user is in login page, skip.
-    if (window.location.pathname !== '/login.html') {
-      window.location = 'login.html'
+        var uid = user.uid;
+        console.log(user)
+    } else {
+        if (window.location.pathname === '/register.html') return // user is in login page, skip.
+        if (window.location.pathname == '/login.html') return
+        if (window.location.pathname == 'index.html') return
+        if (window.location.pathname == 'projetos-cadastrados.html') {
+            window.location = '/login.html'
+        }
     }
-   }
-  })
+})
     
 
 
@@ -48,6 +49,20 @@ function register() {
         .catch((error) => {
             alert(error)
         })
+}
+
+function redefinirSenha() {
+    var changePassword = document.getElementById('changePassword').value
+
+    firebase.auth().sendPasswordResetEmail(changePassword)
+  .then(() => {
+    location.href = "forgotPassword2.html"
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ..
+  });
 }
 
 

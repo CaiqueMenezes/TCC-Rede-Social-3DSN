@@ -188,13 +188,23 @@ h2 {
 /*Lado esquerdo da tela de Login/Registro */
 .lado-esquerdo {
 padding: 80px 80px 100px;
+position: relative;
 
   background-color: #f6f6f6;
   height: 100vh;
 }
-/* Ilustração da tela de Login/Registro */
+/* Ilustração da tela de Registro */
 .ilustração {
   height: 390px;
+}
+/* Ilustração da tela de login */
+.ilustraçãoLogin {
+  height:380px;
+
+  position: absolute;
+  right: 80px;
+  bottom: 60px;
+
 }
 /* Texto abaixo da ilustração */
 .titulo-img {
@@ -246,6 +256,9 @@ padding: 80px 80px 100px;
   color: #FE9800;
   font-weight: 300;
 }
+.linkLogin:hover {
+  color: #a56403;
+}
 /* Botão do Google */
 #btnGoogle {
   position: relative;
@@ -285,4 +298,20 @@ padding: 80px 80px 100px;
   vertical-align: super;
   background-color: #DCDCDC;
 }
+/* Botão Voltar */
+.btnVoltar {
+  width: 100%;
+}
+/* Botão Voltar */
+.btnVoltar a {
+  color: #888;
+  text-decoration: none ;
+}
+/* Icone Voltar */
+.fa-arrow-left {
+  margin-right: 15px;
+  color: #888;
+}
+
+
 
