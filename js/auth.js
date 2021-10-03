@@ -1,6 +1,8 @@
 auth = firebase.auth()
 
-
+window.onload = () => {
+    console.log(user)
+}
 
 function login() {
     if (firebase.auth().currentUser) {
