@@ -12,7 +12,6 @@ function login() {
         .signInWithEmailAndPassword(email, password)
         .then(() => {
             window.location.href = "index.html"
-            alert("Usuário Conectado, Bem Vindo!")
         })
         .catch((error) => {
             alert(error)
@@ -67,7 +66,6 @@ function register() {
         .auth()
         .createUserWithEmailAndPassword(email, password)
         .then(() => {
-            alert('usuário registrado com sucesso, efetue o login para continuar');
             window.location.href = "login.html"
         })
         .catch((error) => {
@@ -93,7 +91,6 @@ function redefinirSenha() {
 function logOut() {
     auth.signOut()
         .then(() => {
-            alert('Usuário deslogado com sucesso');
             window.location.href = "login.html"
         })
         .catch((error) => {
