@@ -403,7 +403,7 @@ a:hover {
 .navbar .nav-item.dropdown.show .nav-link,
 .navbar .nav-item .nav-link:hover,
 .navbar .nav-item .nav-link.active {
-	color: #0092ff;
+	color: #FE9800;
 }
 
 /* Dropdown Menu */
@@ -1402,11 +1402,31 @@ a:hover {
 /* mudando o estilo do paragrafo principal na pagina inicial */ 
 .btn-conheca {
 	background-color: #FE9800;
-	border: none;
+	border-color: #FE9800;
 
 	width: 200px;
 	height: 45px;
 	border-radius: 10px;
 	text-align: center;
 	padding: 25px;
+}
+
+.btn-conheca:hover {
+	border-color: #FE9800 !important;
+	color: #FE9800;
+	background-color: transparent;
+}
+
+.btn-enviar {
+	background-color: #FE9800;
+	border-color: #FE9800;
+
+	border-radius: 10px;
+	text-align: center;
+}
+
+.btn-enviar:hover {
+	border-color: #FE9800 !important;
+	color: #FE9800;
+	background-color: transparent;
 }
