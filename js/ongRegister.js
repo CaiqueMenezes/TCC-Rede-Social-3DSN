@@ -15,11 +15,8 @@ function Cadastrar() {
         'address': address
     }
 
-    axios.post("http://localhost:3001/auth/ongRegister", json, {
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-        }
+    axios.post("http://localhost:3001/auth/ongRegister", json, function (req, res) {
+        res.header("Access-Control-Allow-Origin", "*");
 
     }).then((res) => {
         console.log(res)

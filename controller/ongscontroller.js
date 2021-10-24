@@ -5,6 +5,7 @@ const Ongs = require('../models/ongs');
 const router = express.Router();
 
 router.post('/ongRegister', async (req,res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     const { email } = req.body;
 
     try {
