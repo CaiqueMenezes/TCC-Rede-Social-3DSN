@@ -19,4 +19,13 @@ router.post('/ongRegister', async (req,res) => {
     }
 });
 
+router.get('/ongRegister', async function(req, res) {
+    try {
+      let ongs = await Ongs.find({})
+      res.send(ongs)
+    } catch (error) {
+      res.json({error: error}).status(500)
+    }
+  });
+
 module.exports = app => app.use('/auth', router);
