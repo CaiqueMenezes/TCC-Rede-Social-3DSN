@@ -53,7 +53,7 @@ firebase.auth().onAuthStateChanged(user => {
         if (window.location.pathname === '/register.html') return // user is in login page, skip.
         if (window.location.pathname == '/login.html') return
         if (window.location.pathname == 'index.html') return
-        if (window.location.pathname == 'projetos-cadastrados.html') {
+        if (window.location.pathname == '/projetos-cadastrados') {
             window.location = '/login.html'
         }
     }
