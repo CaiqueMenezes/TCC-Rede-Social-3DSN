@@ -16,7 +16,8 @@ function Cadastrar() {
         'email': email,
         'address': address
     }
-
+    
+    axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
     axios.post("http://localhost:3001/auth/ongRegister", json, {
         headers: {
             'Access-Control-Expose-Headers': 'Access-Control-Allow-Origin',
