@@ -1,8 +1,10 @@
 const express = require('express');
-
+const cors = require('cors')
 const Ongs = require('../models/ongs');
 
 const router = express.Router();
+
+router.use(cors())
 
 router.post('/ongRegister', async (req,res) => {
     res.header("Access-Control-Allow-Origin", "*");
