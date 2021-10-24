@@ -29,7 +29,8 @@
 
     <div class="row align-items-center justify-content-center">
         <div class="col-md-6 lado-esquerdo justify-content-center">
-            <h2 class=" mb-5 titulo-img">Cadastrando mais um <span class="destaque">projeto social </span> você muda a vida de <span class="destaque">milhares de pessoas!</span></h2>
+            <h2 class=" mb-5 titulo-img">Cadastrando mais um <span class="destaque">projeto social </span> você muda a
+                vida de <span class="destaque">milhares de pessoas!</span></h2>
             <img class="ilustração mt-1" src="images/undraw_Save_to_bookmarks_re_8ajf (1).svg" alt="">
         </div>
 
@@ -37,36 +38,36 @@
             <div class="container">
                 <img class="logo-principal" src="images/Lays-Logo.png" alt="" style="height: 50px;">
                 <h3 class="titulo text-center mb-4">Registrar Novo Projeto</h3>
-                <form action="#" method="post" onsubmit="return validaForm(this);">
+                <form action="#" method="post" onsubmit="Cadastrar()">
 
                     <div class="form-group first">
-                        <label for="username">Nome da ONG</label>
-                        <input type="text" class="form-control mb-3" placeholder="SwOngs" id="email">
+                        <label for="name">Nome da ONG</label>
+                        <input type="text" class="form-control mb-3" placeholder="SwOngs" id="name">
                     </div>
 
                     <div class="form-group last mb-3">
-                        <label for="password">Descrição</label>
-                        <input type="text" class="form-control" placeholder="Somos uma ONG..." id="password">
+                        <label for="description">Descrição</label>
+                        <input type="text" class="form-control" placeholder="Somos uma ONG..." id="description">
                     </div>
 
                     <div class="form-group last mb-3">
-                        <label for="password">Causa</label>
-                        <input type="text" class="form-control" placeholder="Animais de Rua" id="password">
+                        <label for="cause">Causa</label>
+                        <input type="text" class="form-control" placeholder="Animais de Rua" id="cause">
                     </div>
 
                     <div class="form-group last mb-3">
-                        <label for="password">Numero de Contato</label>
-                        <input type="text" class="form-control" placeholder="(99)999999999" id="password">
+                        <label for="contact">Numero de Contato</label>
+                        <input type="text" class="form-control" placeholder="(99)999999999" id="contact">
                     </div>
 
                     <div class="form-group last mb-3">
-                        <label for="password">Email</label>
-                        <input type="email" class="form-control" placeholder="exemplo@gmail.com" id="password">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" placeholder="exemplo@gmail.com" id="email">
                     </div>
 
                     <div class="form-group last mb-3">
-                        <label for="password">Endereço</label>
-                        <input type="text" class="form-control" placeholder="Rua Teste N 80" id="password">
+                        <label for="address">Endereço</label>
+                        <input type="text" class="form-control" placeholder="Rua Teste N 80" id="address">
                     </div>
 
                 </form>
@@ -77,16 +78,41 @@
         </div>
     </div>
 
+    <script>
 
+        function Cadastrar() {
+            let name = document.getElementById('name').value
+            let description = document.getElementById('description').value
+            let cause = document.getElementById('cause').value
+            let contact = document.getElementById('contact').value
+            let email = document.getElementById('email').value
+            let address = document.getElementById('address').value
+
+            axios.post("http://localhost:3001/ongRegister", {
+                'name': name,
+                'description': description,
+                'cause': cause,
+                'contact': contact,
+                'email': email,
+                'address': address
+            }).then((res) => {
+                console.log(res)
+            }).catch((err) => {
+                console.log(err)
+            })
+        }
+    </script>
 
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/init.js"></script>
     <script src="js/auth.js"></script>
+    <script src="js/ongRegister.js"></script>
 </body>
 
 </html>
