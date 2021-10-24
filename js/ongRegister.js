@@ -6,7 +6,7 @@ function Cadastrar() {
     let email = document.getElementById('email').value
     let address = document.getElementById('address').value
 
-    axios.post("http://localhost:3001/ongRegister", {
+    axios.post("http://localhost:3001/auth/ongRegister", {
         'name': name,
         'description': description,
         'cause': cause,
