@@ -1,3 +1,5 @@
+const Ongs = require("../models/ongs")
+
 function Cadastrar() {
     let name = document.getElementById('name').value
     let description = document.getElementById('description').value
@@ -6,19 +8,27 @@ function Cadastrar() {
     let email = document.getElementById('email').value
     let address = document.getElementById('address').value
 
-    axios.post("http://localhost:3001/auth/ongRegister", {
+    let json = {
         'name': name,
         'description': description,
         'cause': cause,
         'contact': contact,
         'email': email,
         'address': address
-    }).then((res) => {
-        console.log(res)
-    }).catch((err) => {
-        console.log(err)
+    }
+
+    axios.post("http://localhost:3001/auth/ongRegister", json, {
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+        }
+
     })
+
 }
+
+
+
 
 
 
