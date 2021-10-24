@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Inputs */
+.form-control {
+    border-radius: 10px !important;
+    border: 1px solid #efefef !important;
+  
+    height: 50px;
+    padding: 15px !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  .form-control:focus {
+    border: 1px solid #FE9800 !important;
+    outline: none !important;
+  }
+  /*Lado direito da tela de Login/Registro */
+  .lado-direito {
+    position: relative;
+  
+    background-color: #ffffff;
+    padding: 0 90px;
+    padding-top: 30px;
+  }
+  /*Lado esquerdo da tela de Login/Registro */
+  .lado-esquerdo {
+    padding: 80px 80px 100px;
+    position: relative;
+  
+    background-color: #FFD699;
+    height: 130vh;
+  }
+  /* Ilustração da tela de Registro */
+  .ilustração {
+    height: 390px;
+  }
+  /* Ilustração da tela de login */
+  .ilustraçãoLogin {
+    height:380px;
+  
+    position: absolute;
+    right: 80px;
+    bottom: 60px;
+  
+  }
+  /* Texto abaixo da ilustração */
+  .titulo-img {
+    font-weight: bold;
+    text-align: start;
+    font-size: 23px;
+    line-height: 35px;
+  
+    color: black;
+  }
+  
+  .destaque {
+    color: #FE9800;
+  }
+  
+  .logo-principal {
+    position: absolute;
+  
+    top: -40px;
+    left: 300px;
+  }
+  
+  /* Titulo Lado direito */
+  .titulo {
+    font-size: 35px;
+    font-weight: bolder;
+  }
+  
+  /* Botão de Logar/Registrar */
+  #btnLogin {
+    width: 100%;
+    height: 50px;
+  
+    border-radius: 6px;
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+  
+    background: rgb(247,178,75);
+    background: linear-gradient(126deg, rgba(247,178,75,1) 35%, rgba(247,167,48,1) 66%, rgba(235,141,2,1) 95%);
+  }
+  #btnLogin:hover {
+    background: rgb(227,165,73);
+    background: linear-gradient(126deg, rgba(227,165,73,1) 35%, rgba(226,152,42,1) 66%, rgba(228,137,3,1) 95%);
+  }
+  /* link "Login" */
+  .linkLogin {
+    text-decoration: none;
+    color: #FE9800;
+    font-weight: 300;
+  }
+  .linkLogin:hover {
+    color: #a56403;
+  }
+  /* Botão do Google */
+  #btnGoogle {
+    position: relative;
+    width: 100%;
+    height: 50px;
+  
+    border: 1px solid #efefef;
+    text-align: center;
+    border-radius: 6px;
+    padding: 12px 0;
+  }
+  /* Imagem do Botão do Google */
+  .img-google {
+    position: absolute;
+    left: 25px;
+    top: 14px;
+  }
+  
+  /* Traço antes do "ou" */
+  .text-ou::before {
+    content: '';
+    width: 190px;
+    height: 1px;
+    display: inline-block;
+    margin: 0 15px;
+    vertical-align: super;
+    background-color: #DCDCDC;
+  }
+  
+  /* Traço depois do "ou" */
+  .text-ou::after {
+    content: '';
+    width: 190px;
+    height: 1px;
+    display: inline-block;
+    margin: 0 15px;
+    vertical-align: super;
+    background-color: #DCDCDC;
+  }
+  /* Botão Voltar */
+  .btnVoltar {
+    width: 100%;
+  }
+  /* Botão Voltar */
+  .btnVoltar a {
+    color: #888;
+    text-decoration: none ;
+  }
+  /* Icone Voltar */
+  .fa-arrow-left {
+    margin-right: 15px;
+    color: #888;
+  }
+  
+  
+  @media screen and (max-width:500px) {
+  
+  /* Concertando o padding do conteúdo quando mobile */
+  .lado-direito {
+    padding: 110px 30px 0 30px;
+  }
+  
+  /* deixanndo o lado da ilustração invisivel quando mobile */
+  .lado-esquerdo {
+    display: none;
+  }
+  
+  /* concertando o posicionamento do logo quando mobile */
+  .logo-principal {
+    top: 30px ;
+    left: 130px ;
+  }
+}
