@@ -72,7 +72,13 @@
 
                     <div class="form-group last mb-3">
                         <label id="image-button" for="image">Imagem da ONG</label>
-                        <input type="file" class="form-control" id="image">
+                        <input 
+                        type="file" 
+                        class="form-control" 
+                        id="image"
+                        multiple="false"
+                        onchange="getFile()"
+                        accept="image/*">
                     </div>
 
                 </form>
@@ -91,7 +97,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/init.js"></script>
-    <script src="js/auth.js"></script>
+    <script type="module" src="js/auth.js"></script>
     <script src="js/ongRegister.js"></script>
 </body>
 

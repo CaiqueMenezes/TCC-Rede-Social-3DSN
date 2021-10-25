@@ -1,6 +1,7 @@
 var firebaseConfig = {
   apiKey: "AIzaSyCxuzY0WJNs77Z5aKwrdXvitn5cyr_fLgo",
   authDomain: "swongs.firebaseapp.com",
+  databaseURL: "https://swongs-default-rtdb.firebaseio.com",
   projectId: "swongs",
   storageBucket: "swongs.appspot.com",
   messagingSenderId: "779123887880",

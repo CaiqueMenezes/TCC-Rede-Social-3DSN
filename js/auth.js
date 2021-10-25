@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid'
 auth = firebase.auth()
 
 
@@ -105,3 +106,14 @@ function funcoes() {
     authState()
 }
 
+// Capturar imagens e mandar para o firebase
+function getFile(e) {
+    const file = e.target.files[0]
+    const storageRef = firebaseConfig.storage().ref()
+    const fileRef = storageRef.child('ongs/' + uuidv4 + '/' + file.name)
+    fileRef.put(file).then((res) => {
+        console.log('Deu certo')
+    }).catch((err) => {
+        console.log(err)
+    })
+}   
