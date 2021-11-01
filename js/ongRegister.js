@@ -7,7 +7,7 @@ function Cadastrar() {
     let address = document.getElementById('address').value
 
     let json = {
-        'image': 'teste',
+        'picture': 'teste',
         'name': name,
         'description': description,
         'cause': cause,
@@ -32,14 +32,15 @@ function GetFile(e) {
     let images = document.getElementById('image')
     images.addEventListener("change", function(event) {
         var file = images.files
+        var picture = ''
         console.log(file)
         storageRef = firebaseConfig.storage().ref()
         const fileRef = storageRef.child('ongs/' + name + '/' + file.name)
-        fileRef.put(file).then((res) => {
-            console.log('deu certo')
-        }).catch((err) => {
-            console.log(err)
+        fileRef.put(file).then(() => {
+            let url = await fileRef.getDownloadURL();
+            picture = url
         })
+
     })
 }
 
