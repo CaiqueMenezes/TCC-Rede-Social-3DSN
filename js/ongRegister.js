@@ -7,6 +7,7 @@ function Cadastrar() {
     let address = document.getElementById('address').value
 
     let json = {
+        'image': 'teste',
         'name': name,
         'description': description,
         'cause': cause,
