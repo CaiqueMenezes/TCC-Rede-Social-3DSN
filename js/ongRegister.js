@@ -32,6 +32,7 @@ function GetFile(e) {
     let images = document.getElementById('image')
     images.addEventListener("change", function(event) {
         var file = images.files
+        console.log(file)
         storageRef = firebaseConfig.storage().ref()
         const fileRef = storageRef.child('ongs/' + name + '/' + file.name)
         fileRef.put(file).then((res) => {
