@@ -28,13 +28,16 @@ function Cadastrar() {
 
 function GetFile(e) {
     let name = document.getElementById('name').value
-    const file = e.target.files[0]
-    const storageRef = firebaseConfig.storage().ref()
-    const fileRef = storageRef.child('ongs/' + name + '/' + file.name)
-    fileRef.put(file).then((res) => {
-        console.log('Deu certo')
-    }).catch((err) => {
-        console.log(err)
+    let images = document.getElementById('image')
+    images.addEventListener("change", function(event) {
+        var file = images.files
+        storageRef = firebaseConfig.storage().ref()
+        const fileRef = storageRef.child('ongs/' + name + '/' + file.name)
+        fileRef.put(file).then((res) => {
+            console.log('deu certo')
+        }).catch((err) => {
+            console.log(err)
+        })
     })
 }
 
