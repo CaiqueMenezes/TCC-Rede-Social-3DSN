@@ -72,13 +72,8 @@
 
                     <div class="form-group last mb-3">
                         <label id="image-button" for="image">Imagem da ONG</label>
-                        <input 
-                        type="file" 
-                        class="form-control" 
-                        id="image"
-                        multiple="false"
-                        onchange="getFile()"
-                        accept="image/*">
+                        <input type="file" class="form-control" id="image" multiple="false" onchange="getFile()"
+                            accept="image/*">
                     </div>
 
                 </form>
@@ -88,6 +83,19 @@
             </div>
         </div>
     </div>
+    <script>
+        function getFile(e) {
+            let name = document.getElementById('name').value
+            const file = e.target.files[0]
+            const storageRef = firebaseConfig.storage().ref()
+            const fileRef = storageRef.child('ongs/' + name + '/' + file.name)
+            fileRef.put(file).then((res) => {
+                console.log('Deu certo')
+            }).catch((err) => {
+                console.log(err)
+            })
+        }
+    </script>
 
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>

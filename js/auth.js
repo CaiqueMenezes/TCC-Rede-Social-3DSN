@@ -106,14 +106,4 @@ function funcoes() {
 }
 
 // Capturar imagens e mandar para o firebase
-function getFile(e) {
-    let name = document.getElementById('name').value
-    const file = e.target.files[0]
-    const storageRef = firebaseConfig.storage().ref()
-    const fileRef = storageRef.child('ongs/' + name + '/' + file.name)
-    fileRef.put(file).then((res) => {
-        console.log('Deu certo')
-    }).catch((err) => {
-        console.log(err)
-    })
-}   
+
